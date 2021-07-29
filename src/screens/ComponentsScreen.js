@@ -1,18 +1,18 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 
 const ComponentsScreen = () => {
     const name = "Jeremy";
     const subheader = (
-        <Text style={style.secondTextStyle}>My name is {name}</Text>
+        <Text style={ styles.secondTextStyle }>My name is { name }</Text>
     );
 
     return (
         <View>
-            <Text style={styles.firstTextStyle}>
+            <Text style={ styles.firstTextStyle }>
                 Getting started with React Native!
             </Text>
-            {subheader}
+            { subheader }
         </View>
     );
 };
