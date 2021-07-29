@@ -1,0 +1,9 @@
+{
+	"files.insertFinalNewline": true,
+	"javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"html.format.endWithNewline": true,
+	"html.format.indentHandlebars": true,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true
+}
