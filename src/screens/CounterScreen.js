@@ -1,18 +1,30 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-const CounterScreen = () => {
-    // This is an invalid way of changing the state of the counter variable
-    // let counter = 0;
+const COUNTER_INCREMENT = 1;
 
-    const [counter, setCounter] = useState(0);
+const reducer = (state, action) => {
+    switch (action.type)
+    {
+        case 'counter_increase':
+            return { ...state, counter: state.counter + action.payload };
+        case 'counter_decrease':
+            return state.counter + action.payload < 0 ? state : { ...state, counter: state.counter + action.payload };
+        default:
+            return state;
+    }
+}
+
+const CounterScreen = () => {
+    const [state, dispatch] = useReducer(reducer, { counter: 0 })
+    const { counter } = state;
 
     return <View>
         <Button title="Increase" onPress={ () => {
-            setCounter(counter + 1);
+            dispatch({ type: 'counter_increase', payload: COUNTER_INCREMENT })
         } } />
         <Button title="Decrease" onPress={ () => {
-            setCounter(counter - 1);
+            dispatch({ type: 'counter_decrease', payload: -1 * COUNTER_INCREMENT })
         } } />
         <Text>Current Count: { counter }</Text>
     </View>
