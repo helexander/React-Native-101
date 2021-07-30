@@ -5,7 +5,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 const HomeScreen = ({ navigation }) => {
   return (
     <View>
-      <Text style={ styles.text }>HII</Text>
+      <Text style={ styles.text }>Welcome to the Home Page of my React Native Projects</Text>
       {/* Two methods to navigate from one screen to another
       However, "Button" is less powerful and has less configuration abilities as compared to "TouchableOpacity" 
       Button is also a self closing tag as compared to TouchableOpacity*/}
@@ -27,6 +27,10 @@ const HomeScreen = ({ navigation }) => {
       <Button
         title="Go to color demo project"
         onPress={ () => { navigation.navigate('Color') } }
+      />
+      <Button
+        title="Go to square demo"
+        onPress={ () => { navigation.navigate('Square') } }
       />
     </View>
   );
