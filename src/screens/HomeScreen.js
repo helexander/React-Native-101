@@ -4,7 +4,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 // Rather than passing the entire props object, we can just refactor the code and only use the "navigation" property from props 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View>
+    <View style={ styles.allButtons }>
       <Text style={ styles.text }>Welcome to the Home Page of my React Native Projects</Text>
       {/* Two methods to navigate from one screen to another
       However, "Button" is less powerful and has less configuration abilities as compared to "TouchableOpacity" 
@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
         onPress={ () => { navigation.navigate('Components') } }
       />
       <TouchableOpacity onPress={ () => { navigation.navigate('List') } }>
-        <Text>Go to list demo</Text>
+        <Text style={ styles.buttonStyle }>Go to list demo</Text>
       </TouchableOpacity>
       <Button
         title="Go to image screen"
@@ -48,6 +48,13 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 30,
   },
+  buttonStyle: {
+    color: 'blue',
+    fontSize: 17,
+  },
+  allButtons: {
+    alignItems: 'center',
+  }
 });
 
 export default HomeScreen;
